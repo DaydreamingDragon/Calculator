@@ -19,7 +19,7 @@ else:
             quit()
 
 # Get input for calculator function
-print(" exponent raises the first number to the power of the second number and mod returns the remainder of the first number divided by the second number.")
+print("Exponent raises the first number to the power of the second number and mod returns the remainder of the first number divided by the second number.")
 function = input("Enter function: add, subtract, multiply, divide, exponent, or mod: ")
 if function != "add" and function != "subtract" and function != "multiply" and function != "divide" and function != "exponent" and function != "mod":
     print("Please enter a function listed above!")
@@ -53,7 +53,7 @@ elif function == "multiply":
 elif function == "divide":
     result = n1 / n2
 elif function == "exponent":
-    result = n1 ^ n2
+    result = n1 ** n2
 elif function == "mod":
     result = n1 % n2
 print(f"{result}")
