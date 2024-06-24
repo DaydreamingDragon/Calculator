@@ -24,7 +24,7 @@ def oneNumber(n1):
     # Get input for calculator function
     print("Radian converts a number from degrees to radians, degrees converts a number from raidans to degrees, ln finds the natural log of a number.")
     print("Trig functions are in radians")
-    function = input("Enter function: sin, cos, tan, asin, acos, atan, sqrt, factorial, radian, degree, ln")
+    function = input("Enter function: sin, cos, tan, asin, acos, atan, sqrt, factorial, radian, degree, ln: ")
 
     # Perform function
     if function == "sin":
