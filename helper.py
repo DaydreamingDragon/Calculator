@@ -1,5 +1,16 @@
 import math
 
+def isFloat(n):
+    try: 
+        float(n)
+    except ValueError:
+        return False
+    str(n)
+    if "." in n:
+        return float(n)
+    else:
+        return int(n)
+    
 def firstNumberInput():
       # Get input for first number
     input1 = input("Enter first number: (type pi for pi, tau for tau, or e for euler's number): ")
@@ -10,14 +21,9 @@ def firstNumberInput():
     elif input1 == "tau":
         n1 = math.tau
     else:
-        try:
-            n1 = int(input1)
-        except ValueError:
-            try:
-                n1 = float(input1)
-            except ValueError:
-                print("Please enter a valid decimal number, pi, e, or tau!")
-                quit()
+        n1 = isFloat(input1)
+        if n1 == False:
+            print("Please enter a valid decimal number, pi, e, or tau!")
     return n1
 
 def oneNumber(n1):
@@ -43,12 +49,13 @@ def oneNumber(n1):
         result = math.sqrt(n1)
     elif function == "factorial":
         # inputted number needs to be an int for factorial
-        try:
-            intn1 = int(n1)
-            result = math.factorial(intn1)
-        except ValueError:
+        strn1 = str(n1)
+        if "." in strn1:
             print("In order to use the factorial function, you must input an integer!")
             quit()
+        else:
+            int(n1)
+            result = math.factorial(n1)
     elif function == "radian":
         result = math.radians(n1)
     elif function == "degrees":
@@ -78,14 +85,7 @@ def twoNumbers(n1):
     elif input2 == "tau":
         n2 = math.tau
     else:
-        try:
-            n2 = int(input2)
-        except ValueError:
-            try:
-                n2 = float(input2)
-            except ValueError:
-                print("Please enter a valid decimal number, pi, e, or tau!")
-                quit()
+       n2 = isFloat(input2)
 
     # Perform function
     if function == "add":
@@ -101,7 +101,13 @@ def twoNumbers(n1):
     elif function == "mod":
         result = n1 % n2
     elif function == "greatest common divisor":
-        result = math.gcd(n1, n2)
+        strn1 = str(n1)
+        strn2 = str(n2)
+        if "." in strn1 or "." in strn2:
+            print("In order to use greatest common divisor, BOTH inputted numbers must be an integer!")
+            quit()
+        else:
+            result = math.gcd(n1, n2)
     elif function == "logbase":
         result = math.log(n1, n2)
     print(f"{result}")
