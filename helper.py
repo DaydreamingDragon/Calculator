@@ -1,4 +1,25 @@
 import math
+
+def firstNumberInput():
+      # Get input for first number
+    input1 = input("Enter first number: (type pi for pi, tau for tau, or e for euler's number): ")
+    if input1 == "pi":
+        n1 = math.pi
+    elif input1 == "e":
+        n1 = math.e
+    elif input1 == "tau":
+        n1 = math.tau
+    else:
+        try:
+            n1 = int(input1)
+        except ValueError:
+            try:
+                n1 = float(input1)
+            except ValueError:
+                print("Please enter a valid decimal number, pi, e, or tau!")
+                quit()
+    return n1
+
 def oneNumber(n1):
     # Get input for calculator function
     print("Radian converts a number from degrees to radians, degrees converts a number from raidans to degrees, ln finds the natural log of a number.")
