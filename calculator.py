@@ -1,5 +1,5 @@
 import math
-import helper.py
+from helper import oneNumber, twoNumbers
 
 # Get input for first number
 input1 = input("Enter first number: (type pi for pi, tau for tau, or e for euler's number): ")

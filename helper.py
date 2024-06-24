@@ -1,10 +1,44 @@
 import math
+def oneNumber(n1):
+    # Get input for calculator function
+    print("Radian converts a number from degrees to radians, degrees converts a number from raidans to degrees, ln finds the natural log of a number.")
+    print("Trig functions are in radians")
+    function = input("Enter function: sin, cos, tan, asin, acos, atan, sqrt, factorial, radian, degree, ln")
+
+    # Perform function
+    if function == "sin":
+        result = math.sin(n1)
+    elif function == "cos":
+        result = math.cos(n1)
+    elif function == "tan":
+        result = math.tan(n1)
+    elif function == "asin":
+        result = math.asin(n1)
+    elif function == "acos":
+        result = math.acos(n1)
+    elif function == "atan":
+        result = math.atan(n1)
+    elif function == "sqrt":
+        result = math.sqrt(n1)
+    elif function == "factorial":
+        result = math.factorial(n1)
+    elif function == "radian":
+        result = math.radians(n1)
+    elif function == "degrees":
+        result = math.degrees(n1)
+    elif function == "ln":
+        result = math.log(n1)
+    else:
+        print("Please enter a function listed above!")
+        quit()
+    print(f"{result}")
 
 def twoNumbers(n1):
     # Get input for calculator function
-    print("Exponent raises the first number to the power of the second number and mod returns the remainder of the first number divided by the second number.")
-    function = input("Enter function: add, subtract, multiply, divide, exponent, or mod: ")
-    if function != "add" and function != "subtract" and function != "multiply" and function != "divide" and function != "exponent" and function != "mod":
+    print("Exponent raises the first number to the power of the second number, logbase finds the log of the first number ")
+    print("with the base of the second number, r and mod returns the remainder of the first number divided by the second number.")
+    function = input("Enter function: add, subtract, multiply, divide, exponent, greatest common divisor, logbase, or mod: ")
+    if function != "add" and function != "subtract" and function != "multiply" and function != "divide" and function != "exponent" and function != "mod" and function != "greatest common divisor" and function != "logbase":
         print("Please enter a function listed above!")
         quit()
 
@@ -39,4 +73,8 @@ def twoNumbers(n1):
         result = n1 ** n2
     elif function == "mod":
         result = n1 % n2
+    elif function == "greatest common divisor":
+        result = math.gcd(n1, n2)
+    elif function == "logbase":
+        result = math.log(n1, n2)
     print(f"{result}")
