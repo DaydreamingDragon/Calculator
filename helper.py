@@ -42,6 +42,7 @@ def oneNumber(n1):
     elif function == "sqrt":
         result = math.sqrt(n1)
     elif function == "factorial":
+        # inputted number needs to be an int for factorial
         try:
             intn1 = int(n1)
             result = math.factorial(intn1)
