@@ -42,7 +42,12 @@ def oneNumber(n1):
     elif function == "sqrt":
         result = math.sqrt(n1)
     elif function == "factorial":
-        result = math.factorial(n1)
+        try:
+            intn1 = int(n1)
+            result = math.factorial(intn1)
+        except ValueError:
+            print("In order to use the factorial function, you must input an integer!")
+            quit()
     elif function == "radian":
         result = math.radians(n1)
     elif function == "degrees":
